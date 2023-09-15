@@ -38,7 +38,7 @@ const Home = () => {
         title: item.title,
         category: item.category,
         issue_date: item.issue_date,
-        return_date: item.return_date,
+        return_date: new Date().toLocaleString(),
         fine_paid: item.fine,
       });
       toast.success("Book returned Successfully");
@@ -57,7 +57,12 @@ const Home = () => {
         </Link>
         <table className="styled-table">
           <caption
-            style={{ color: "blue", fontWeight: "bold", marginTop: "20px" }}
+            style={{
+              color: "slateblue",
+              fontWeight: "bold",
+              marginTop: "40px",
+              fontSize: "26px",
+            }}
           >
             Issued Books
           </caption>
@@ -66,9 +71,9 @@ const Home = () => {
               <th style={{ textAlign: "center" }}>No.</th>
               <th style={{ textAlign: "center" }}>Title</th>
               <th style={{ textAlign: "center" }}>Category</th>
-              <th style={{ textAlign: "center" }}>issue_date</th>
-              <th style={{ textAlign: "center" }}>return_date</th>
-              <th style={{ textAlign: "center" }}>Fine</th>
+              <th style={{ textAlign: "center" }}>Issue Time</th>
+              <th style={{ textAlign: "center" }}>Tentative Reaturn Time</th>
+              <th style={{ textAlign: "center" }}>Fine till Now</th>
               <th style={{ textAlign: "center" }}>Action</th>
             </tr>
           </thead>
@@ -111,7 +116,12 @@ const Home = () => {
       <div>
         <table className="styled-table">
           <caption
-            style={{ color: "blue", fontWeight: "bold", marginTop: "40px" }}
+            style={{
+              color: "slateblue",
+              fontWeight: "bold",
+              marginTop: "40px",
+              fontSize: "26px",
+            }}
           >
             Returned Books
           </caption>
@@ -120,8 +130,8 @@ const Home = () => {
               <th style={{ textAlign: "center" }}>No.</th>
               <th style={{ textAlign: "center" }}>Title</th>
               <th style={{ textAlign: "center" }}>Category</th>
-              <th style={{ textAlign: "center" }}>issue_date</th>
-              <th style={{ textAlign: "center" }}>return_date</th>
+              <th style={{ textAlign: "center" }}>Issue Time</th>
+              <th style={{ textAlign: "center" }}>Return Time</th>
               <th style={{ textAlign: "center" }}>Fine Paid</th>
             </tr>
           </thead>
@@ -134,7 +144,9 @@ const Home = () => {
                   <td>{item.category}</td>
                   <td>{item.issue_date}</td>
                   <td>{item.return_date}</td>
-                  <td>Rs {item.fine_paid}</td>
+                  <td>
+                    {item.fine_paid > 0 ? "Rs " + item.fine_paid : "No fine"}
+                  </td>
                 </tr>
               );
             })}

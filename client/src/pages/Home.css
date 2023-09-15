@@ -4,6 +4,8 @@
     font-size: 0.9rem;
     font-family: sans-serif;
     max-width: 1000px;
+   
+    
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
 }
@@ -24,7 +26,7 @@
 }
 .btn{
     border:none;
-    color: #dddddd;
+    color: white;
     padding: 5px 8px;
     text-align: center;
     text-decoration: none;
@@ -39,10 +41,13 @@
 }
 
 .btn-delete{
-    background-color: red;
+    background-color: rgb(237, 89, 89);
 }
 
 .btn-add{
     background-color: rgb(4, 4, 105);
     margin-bottom: 20px;
+}
+.btn-delete:hover{
+    background-color: darkred;
 }
